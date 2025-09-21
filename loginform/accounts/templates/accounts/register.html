@@ -1,0 +1,55 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width,initial-scale=1"/>
+        <link rel="stylesheet" href="{% static 'accounts/login.css' %}">
+        <title>Login Page</title>
+    </head>
+
+    <body>
+        <div class="bg-overlay" aria-hidden="true"></div>
+        <main class="card" role="main" aria-labelledby="loginHeading">
+            <div class="brand">
+                <div class="logo">
+                    L
+                </div>
+                <div>
+                    <h1 class="loginHeading">Create an account</h1>
+                    <p class="sub">Fill in the credentials to create your account.</p>
+                </div>
+            </div>
+
+            <div class="invalid">
+                <p id="invalid" hidden>* Invalid username or password.</p>
+            </div>
+
+            <form autocomplete="on" action="" id="registerForm">
+                {% csrf_token %}
+                <div class="field">
+                    <label for="username">Username</label>
+                    <input id="username" name= "username"type="username" type="text" placeholder="Username" required="true">
+                </div>
+
+                <div class="field">
+                    <label for="password">Password</label>
+                    <input id="password" type="password" name="password" type="text" placeholder="Password" required="true">
+                </div>
+
+                <div class="actions">
+                    <button class="primary" type="submit" id="registerBtn">Register</button>
+                </div>
+
+                <div class="small">By creating an account you agree to our Terms of Privacy.</div>
+
+                <div class="links">
+                    <a href="{% url 'login' %}">Return to login</a>
+                </div>
+            </form>
+        </main>
+    </body>
+
+    <script type="module" src="{% static 'accounts/register.js' %}"></script>
+</html>
