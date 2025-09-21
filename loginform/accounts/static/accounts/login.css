@@ -145,6 +145,11 @@ input:focus {
     margin-top: 8px;
 }
 
+.small {
+    font-size: 10px;
+    color: var(--muted);
+}
+
 button.primary {
     flex: 1;
     padding: 12px 14px;
